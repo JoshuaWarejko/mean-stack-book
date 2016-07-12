@@ -1,12 +1,12 @@
-var path = require("path");
 var express = require('express');
 var router = express.Router();
 
-router.get('/', function (req, res) {
-	res.sendFile(path.join(__dirname, '../layouts', 'posts.html'));
-});
-
 router.use(express.static(__dirname + '/../assets'));
+router.use('/layouts', express.static(__dirname + '/../layouts'));
+
+router.get('/', function (req, res) {
+	res.render('app.html');
+});
 
 
 

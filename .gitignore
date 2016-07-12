@@ -1,3 +1,18 @@
+# Ignore Node and Bower Packages
+node_modules/
+bower_components/
+www/lib/jquery/
+www/lib/bootstrap-sass/**/*.js
+www/lib/**/bower.json
+www/lib/**/.bower.json
+www/lib/**/composer.json
+www/lib/**/package.json
+www/lib/**/*.md
+www/lib/**/sache.json
+www/lib/**/INSTALL
+www/lib/**/LICENSE
+.tmp/
+assets
 # Logs
 logs
 *.log
