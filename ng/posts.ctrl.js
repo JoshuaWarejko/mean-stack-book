@@ -1,10 +1,15 @@
 angular.module('app')
 .controller('PostsCtrl', function($scope, PostsSvc) {
 
+	// $scope.$on('login', function(_,user) {
+	// 	$scope.currentLogin = user;
+	// });
 	$scope.addPost = function() {
-		if($scope.postBody) {
+		if(!$scope.currentUser) {
+			window.alert("Must be logged in to post!");
+		} else if($scope.postBody) {
 			PostsSvc.create({
-				username: 'joshww13',
+				username: $scope.currentUser.username,
 				textbody: $scope.postBody
 			})
 			.then(function (post) {

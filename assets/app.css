@@ -1,2 +1,5 @@
 h1 {
   color: blue; }
+
+nav.navbar .container ul li {
+  transition: none !important; }
