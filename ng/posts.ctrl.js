@@ -1,15 +1,10 @@
 angular.module('app')
 .controller('PostsCtrl', function($scope, PostsSvc) {
 
-	PostsSvc.fetch()
-	.then(function(posts) {
-		$scope.posts = posts.data;
-	});
-
 	$scope.addPost = function() {
 		if($scope.postBody) {
 			PostsSvc.create({
-				username: 'dickeyxxx',
+				username: 'joshww13',
 				textbody: $scope.postBody
 			})
 			.then(function (post) {
@@ -18,4 +13,8 @@ angular.module('app')
 			});
 		}
 	}
+	PostsSvc.fetch()
+	.then(function(posts) {
+		$scope.posts = posts.data;
+	});
 });
